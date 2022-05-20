@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import { Navbar } from "../components";
+import { ClaimswapAnalytics, Navbar } from "../components";
 
 export default function Claimswap() {
   const backgroundColor = useColorModeValue("white", "gray.900");
@@ -13,6 +13,7 @@ export default function Claimswap() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
+        <ClaimswapAnalytics />
       </Box>
     </>
   );

@@ -19,6 +19,7 @@ function ExploreButton() {
         fontWeight="normal"
         as="kbd"
         letterSpacing={1}
+        href="https://scope.klaytn.com/blocks"
       >
         Explore
       </Button>

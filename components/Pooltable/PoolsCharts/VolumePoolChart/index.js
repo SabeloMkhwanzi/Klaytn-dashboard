@@ -2,7 +2,7 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-const LiquidityChart = ({ data }) => {
+const VolumePoolChart = ({ data }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -52,10 +52,10 @@ const LiquidityChart = ({ data }) => {
       },
     },
   };
-  const liquidGraph = {
+  const volumeGraph = {
     datasets: [
       {
-        label: "Liquidity (7d)",
+        label: "$ Volume (7d)",
         yAxisID: "A",
         data: data,
         borderColor: "#00AF91",
@@ -64,7 +64,7 @@ const LiquidityChart = ({ data }) => {
     ],
   };
 
-  return <Line options={options} data={liquidGraph} />;
+  return <Line options={options} data={volumeGraph} />;
 };
 
-export default LiquidityChart;
+export default VolumePoolChart;

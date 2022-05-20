@@ -2,7 +2,7 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-const LiquidityChart = ({ data }) => {
+const VolumeChart = ({ data }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -52,10 +52,10 @@ const LiquidityChart = ({ data }) => {
       },
     },
   };
-  const volumeWeighted = {
+  const volumeGraph = {
     datasets: [
       {
-        label: "Volume Weighted 1 day ($) ",
+        label: "$ Volume (7d)",
         yAxisID: "A",
         data: data,
         borderColor: "#00AF91",
@@ -64,7 +64,7 @@ const LiquidityChart = ({ data }) => {
     ],
   };
 
-  return <Line options={options} data={volumeWeighted} />;
+  return <Line options={options} data={volumeGraph} />;
 };
 
-export default LiquidityChart;
+export default VolumeChart;

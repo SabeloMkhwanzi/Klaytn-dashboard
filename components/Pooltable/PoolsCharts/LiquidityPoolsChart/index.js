@@ -2,7 +2,7 @@ import React from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
-const LiquidityChart = ({ data }) => {
+const LiquidityPoolsChart = ({ data }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -67,4 +67,4 @@ const LiquidityChart = ({ data }) => {
   return <Line options={options} data={liquidGraph} />;
 };
 
-export default LiquidityChart;
+export default LiquidityPoolsChart;
