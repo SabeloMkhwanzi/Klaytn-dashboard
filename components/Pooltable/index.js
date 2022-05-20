@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Pooltable = () => {
+export const PoolTable = () => {
   return <div>Pooltable</div>;
 };

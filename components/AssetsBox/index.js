@@ -1,20 +1,10 @@
 import React from "react";
 import { Box, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
-import millify from "millify";
 
-function AssetsBox({ data }) {
+function AssetsBox({ data, items }) {
   const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
-  const TextColorMode1 = useColorModeValue("gray.600", "white");
   const TextColor = useColorModeValue("#FC770A", "#FC770A");
   const TextColorMode = useColorModeValue("gray.500", "gray.400");
-
-  //   const formatCash = (n) => {
-  //     if (n < 1e3) return n;
-  //     if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1);
-  //     if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1);
-  //     if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1);
-  //     if (n >= 1e12) return +(n / 1e12).toFixed(1);
-  //   };
 
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -140,7 +130,7 @@ function AssetsBox({ data }) {
               fontWeight="semibold"
               mt={5}
             >
-              Market CapUsd
+              Market Cap
             </Text>
             <Text
               fontSize="lg"
@@ -179,6 +169,7 @@ function AssetsBox({ data }) {
             </Text>
           </Box>
         </Box>
+
         <Box w="md" maxW="xs" justifyContent="center" px={5} ps={5} py={1}>
           <Box>
             <Text

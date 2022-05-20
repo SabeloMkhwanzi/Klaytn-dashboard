@@ -1,9 +1,8 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { background, Box, useColorModeValue } from "@chakra-ui/react";
-import { Dashboard, Navbar } from "../components";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Navbar } from "../components";
 
-export default function Home() {
+export default function Claimswap() {
   const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <>
@@ -14,7 +13,6 @@ export default function Home() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
-        <Dashboard />
       </Box>
     </>
   );
