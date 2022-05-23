@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import AssetsBox from "../AssetsBox/index";
-import LineCharts from "../LineCharts/index";
+
+import { TableToken } from "..";
 
 function TokenTable() {
-  const [health, setHealth] = useState([]);
-  const [charts, setCharts] = useState([]);
-  const [volumeWeighted, setVolumeWeighted] = useState([]);
+  const [items, setItems] = useState([]);
   const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
 
+  console.log(items);
+
   useEffect(() => {
-    getClaimHealth();
-    health;
+    getPools();
+    items;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -24,7 +24,7 @@ function TokenTable() {
     if (n >= 1e12) return +(n / 1e12).toFixed(1);
   };
 
-  const getClaimHealth = async (e) => {
+  const getPools = async (e) => {
     const response = await fetch(
       "https://api.covalenthq.com/v1/8217/xy=k/claimswap/tokens/?&key=ckey_4e73d56514984838ab3206fbaf4"
     );
@@ -34,28 +34,10 @@ function TokenTable() {
 
   return (
     <Box>
-      {items.map((item) => (
-        <Box key={item.chain_id}>{console.log(item)}</Box>
-      ))}
-      <Box mx={3} mb={2}>
-        <Box
-          mx="auto"
-          my={5}
-          //mx={10}
-          px={5}
-          ps={5}
-          py={5}
-          bg={BoxBgColor}
-          rounded="md "
-          borderRadius="lg"
-          h="450px"
-          maxW="950"
-          boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-          bgColor="rgba(255, 0, 0, 0.1)"
-        >
-          <LineCharts data={volumeWeighted} />
-        </Box>
-        <AssetsBox data={assets} items={items} />
+      <Box mb={2} pt={10}></Box>
+
+      <Box minWidth="1000" maxW="600" justifyItems="center" mx="auto">
+        <TableToken data={items} rowsPerPage={9} />
       </Box>
     </Box>
   );

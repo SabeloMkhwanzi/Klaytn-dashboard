@@ -133,7 +133,7 @@ export default function Navbar() {
                   fontWeight="semibold"
                   textTransform="uppercase"
                   letterSpacing={2}
-                  href={"Tokens"}
+                  href={"tokens"}
                 >
                   Tokens
                 </Link>
@@ -181,7 +181,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"myassets"}
+                href={"claimswap"}
               >
                 ClaimSwap Analytics
               </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"myassets"}
+                href={"pools"}
               >
                 Pools
               </Link>
@@ -205,7 +205,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"myassets"}
+                href={"tokens"}
               >
                 Tokens
               </Link>
@@ -217,7 +217,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"myassets"}
+                href={"markets"}
               >
                 klaytn Markets
               </Link>

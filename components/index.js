@@ -14,3 +14,5 @@ export { default as VolumeChart } from "./ClaimswapAnalytics/VolumeChart/index";
 export { default as Table } from "./PoolTable/Table/index";
 export { default as LiquidityPoolsChart } from "./PoolTable/PoolsCharts/LiquidityPoolsChart/index";
 export { default as VolumPoolChart } from "./PoolTable/PoolsCharts/VolumePoolChart/index";
+export { default as TokenOverview } from "./TokenTable/TokenOverview/index";
+export { default as TableToken } from "./TokenTable/TableToken/index";
