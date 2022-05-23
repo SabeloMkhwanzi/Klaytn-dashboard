@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import TokenTable from "../components/TokenTable/tokenTable";
+import TokenTable from "../components/TokenTable/tokenTable.js";
 import Navbar from "../components/Navbar/index";
 
 export default function Tokens() {

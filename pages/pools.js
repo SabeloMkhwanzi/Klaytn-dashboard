@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import PoolTable from "../components/PoolTable/poolTable";
+import PoolTable from "../components/PoolTable/poolTable.js";
 import Navbar from "../components/Navbar/index";
 
 export default function Pools() {
