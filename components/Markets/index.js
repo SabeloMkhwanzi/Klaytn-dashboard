@@ -16,8 +16,6 @@ function Markets() {
   const TextColor = useColorModeValue("black", "white");
   const HeadingTextColorMode = useColorModeValue("black", "White");
 
-  console.log(markets);
-
   const getKlaytnMarket = async (e) => {
     const response = await axios.get(
       "https://api.coincap.io/v2/assets/klaytn/markets"

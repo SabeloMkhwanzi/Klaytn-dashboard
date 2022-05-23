@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 
-import { LiquidityChart, VolumeChart } from "..";
+import LiquidityChart from "./LiquidityChart/index";
+import VolumeChart from "./VolumeChart/index";
 import ClaimOverview from "./ClaimOverview/index";
 
 function ClaimswapAnalytics() {

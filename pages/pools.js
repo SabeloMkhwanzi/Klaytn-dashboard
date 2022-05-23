@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import { Navbar, PoolTable } from "../components";
+import PoolTable from "../components/PoolTable/index";
+import Navbar from "../components/Navbar/index";
 
 export default function Pools() {
   const backgroundColor = useColorModeValue("white", "gray.900");

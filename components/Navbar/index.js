@@ -9,14 +9,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import {
-  useColorMode,
-  useColorModeValue,
-  IconButton,
-  IconButtonProps,
-} from "@chakra-ui/react";
+import { useColorMode, useColorModeValue, IconButton } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { GiTicket } from "react-icons/gi";
 
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 

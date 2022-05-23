@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Box, useColorModeValue, Text } from "@chakra-ui/react";
-import { TableToken } from "..";
-import TokenOverview from "./TokenOverview";
+import TableToken from "./TableToken/index";
+import TokenOverview from "./TokenOverview/index";
 
 function TokenTable() {
   const [items, setItems] = useState([]);

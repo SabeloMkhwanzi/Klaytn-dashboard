@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 import { Box, Stack, useColorModeValue, Text } from "@chakra-ui/react";
-import PoolOverview from "./PoolOverview";
-import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart";
-import VolumePoolChart from "./PoolsCharts/VolumePoolChart";
-import { Table } from "..";
+import PoolOverview from "./PoolOverview/index";
+import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart/index";
+import VolumePoolChart from "./PoolsCharts/VolumePoolChart/index";
+import Table from "./Table/index";
 
 function PoolTable() {
   const [items, setItems] = useState([]);
@@ -14,7 +14,7 @@ function PoolTable() {
   const HeadingTextColorMode = useColorModeValue("black", "White");
 
   useEffect(() => {
-    getClaimHealth();
+    PoolTable();
     items;
     liquidGraph;
     volumeGraph;

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import { ClaimswapAnalytics, Navbar } from "../components";
+import ClaimswapAnalytics from "../components/ClaimswapAnalytics/index";
+import Navbar from "../components/Navbar/index";
 
 export default function Claimswap() {
   const backgroundColor = useColorModeValue("white", "gray.900");

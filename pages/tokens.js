@@ -1,7 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import { Navbar, TokenTable } from "../components";
+import TokenTable from "../components/TokenTable/index";
+import Navbar from "../components/Navbar/index";
 
 export default function Tokens() {
   const backgroundColor = useColorModeValue("white", "gray.900");
