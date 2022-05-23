@@ -47,7 +47,7 @@ function TokenOverview({ data }) {
                     color={TextColor}
                     fontWeight="bold"
                   >
-                    ${item.chain_id}
+                    {item.chain_id}
                   </Text>
                 </Box>
               </Box>
