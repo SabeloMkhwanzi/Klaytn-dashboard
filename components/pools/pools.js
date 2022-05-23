@@ -6,7 +6,7 @@ import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart/index";
 import VolumePoolChart from "./PoolsCharts/VolumePoolChart/index";
 import Table from "./Table/index";
 
-function PoolTable() {
+function Pools() {
   const [items, setItems] = useState([]);
   const [liquidGraph, setLiquidGraph] = useState([]);
   const [volumeGraph, setVolumeGraph] = useState([]);
@@ -107,4 +107,4 @@ function PoolTable() {
   );
 }
 
-export default PoolTable;
+export default Pools;

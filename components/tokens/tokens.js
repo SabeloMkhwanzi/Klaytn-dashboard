@@ -3,7 +3,7 @@ import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 import TableToken from "./TableToken/index";
 import TokenOverview from "./TokenOverview/index";
 
-function TokenTable() {
+function Tokens() {
   const [items, setItems] = useState([]);
   const [poolOverviews, setPoolOverviews] = useState([]);
   const HeadingTextColorMode = useColorModeValue("black", "White");
@@ -61,4 +61,4 @@ function TokenTable() {
   );
 }
 
-export default TokenTable;
+export default Tokens;

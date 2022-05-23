@@ -112,7 +112,7 @@ export default function Navbar() {
                   fontWeight="semibold"
                   textTransform="uppercase"
                   letterSpacing={2}
-                  href={"pools"}
+                  href={"pool"}
                 >
                   Pools
                 </Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
                   fontWeight="semibold"
                   textTransform="uppercase"
                   letterSpacing={2}
-                  href={"tokens"}
+                  href={"token"}
                 >
                   Tokens
                 </Link>
@@ -183,7 +183,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"pools"}
+                href={"pool"}
               >
                 Pools
               </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
                 fontWeight="semibold"
                 textTransform="uppercase"
                 letterSpacing={3}
-                href={"tokens"}
+                href={"token"}
               >
                 Tokens
               </Link>
