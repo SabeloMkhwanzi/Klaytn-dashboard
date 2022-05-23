@@ -1,11 +1,9 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React from "react";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import { Navbar, TableToken, TokenTable } from "../components";
-import countriesData from "../data/countries";
+import { Navbar, TokenTable } from "../components";
 
 export default function Tokens() {
-  const [countries] = useState([...countriesData]);
   const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <>
@@ -16,7 +14,6 @@ export default function Tokens() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
-
         <TokenTable />
       </Box>
     </>

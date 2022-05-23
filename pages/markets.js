@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Navbar } from "../components";
+import { Markets } from "../components";
 
-export default function Markets() {
+export default function Market() {
   const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <>
@@ -13,6 +14,7 @@ export default function Markets() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
+        <Markets />
       </Box>
     </>
   );

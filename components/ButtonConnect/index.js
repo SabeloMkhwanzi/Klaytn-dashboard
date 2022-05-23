@@ -9,8 +9,6 @@ import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
 function ButtonConnect() {
-  // bgColor
-  //const ButtonTextColor = useColorModeValue("white", "black");
   const ButtonColorMode = useColorModeValue("#FC770A", "#FC770A");
   const ButtonTextColor = useColorModeValue("gray.700", "gray.700");
 

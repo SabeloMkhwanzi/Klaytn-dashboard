@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 import { TableToken } from "..";
 import TokenOverview from "./TokenOverview";
 
 function TokenTable() {
   const [items, setItems] = useState([]);
   const [poolOverviews, setPoolOverviews] = useState([]);
-
-  console.log(items);
-  console.log(poolOverviews);
+  const HeadingTextColorMode = useColorModeValue("black", "White");
 
   useEffect(() => {
     getPools();
@@ -44,8 +41,18 @@ function TokenTable() {
   };
   return (
     <Box>
-      <Box mb={2} pt={10}></Box>
-
+      <Text
+        mt="1%"
+        mx="10%"
+        fontSize="2xl"
+        fontWeight="semibold"
+        color={HeadingTextColorMode}
+      >
+        Claimswap Tokens Analytics
+      </Text>
+      <Text mx="10%" fontSize="xl" fontWeight="normal" color="gray.400">
+        Overview
+      </Text>
       <Box minWidth="1000" maxW="600" justifyItems="center" mx="auto">
         <TokenOverview data={poolOverviews} />
         <TableToken data={items} rowsPerPage={9} />
@@ -55,28 +62,3 @@ function TokenTable() {
 }
 
 export default TokenTable;
-
-//https://api.covalenthq.com/v1/:chain_id/xy=k/:dexname/pools/address/:address/transactions/?&key=ckey_4e73d56514984838ab3206fbaf4
-
-//https://api.covalenthq.com/v1/:chain_id/xy=k/:dexname/health/?&key=ckey_4e73d56514984838ab3206fbaf4
-
-///https://api.covalenthq.com/v1/:chain_id/xy=k/:dexname/ecosystem/?&key=ckey_4e73d56514984838ab3206fbaf4
-
-//https://api.coincap.io/v2/assets/klay
-
-// //history;
-// ("https://api.coincap.io/v2/assets/bitcoin/history?interval=d1");
-
-// //markets;
-//("https://api.coincap.io/v2/assets/bitcoin/markets");
-
-// //rates;
-// ("https://api.coincap.io/v2/rates/bitcoin");
-
-// //contract metadata
-// (https://api.covalenthq.com/v1/8217/tokens/tokenlists/:id/?&key=ckey_4e73d56514984838ab3206fbaf4)
-
-//"https://api.covalenthq.com/v1/56/xy=k/pancakeswap_v2/tokens/address/0xce146236fe4e48240cd8f7d22c38c07c7a6bab0b/?quote-currency=USD&format=JSON&tickers=KLAY&key=ckey_4e73d56514984838ab3206fbaf47"
-//"https://api.covalenthq.com/v1/8217/xy=k/pancakeswap_v2/tokens/address/0xce146236fe4e48240cd8f7d22c38c07c7a6bab0b/?quote-currency=USD&format=JSON&tickers=KLAY&key=ckey_4e73d56514984838ab3206fbaf4"
-//"https://api.covalenthq.com/v1/8217/xy=k/claimswap/tokens/address/0xce146236fe4e48240cd8f7d22c38c07c7a6bab0b/?&key=ckey_4e73d56514984838ab3206fbaf4"
-//"https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4"

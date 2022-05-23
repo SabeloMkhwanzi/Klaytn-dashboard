@@ -187,9 +187,9 @@ function AssetsBox({ data, items }) {
                 fontWeight="bold"
                 fontSize="lg"
                 mt={2}
-                color="red"
+                color="white"
               >
-                {numberWithCommas(data.changePercent24Hr)}%
+                {data.changePercent24Hr}%
               </Text>
             </Box>
           </Box>
@@ -200,7 +200,3 @@ function AssetsBox({ data, items }) {
 }
 
 export default AssetsBox;
-
-// #BB0149
-// #FC770A
-// #850000

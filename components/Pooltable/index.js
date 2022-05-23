@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Box, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Stack, useColorModeValue, Text } from "@chakra-ui/react";
 import PoolOverview from "./PoolOverview";
 import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart";
 import VolumePoolChart from "./PoolsCharts/VolumePoolChart";
 import { Table } from "..";
-//import AssetsBox from "../AssetsBox/index";
 
 function PoolTable() {
   const [items, setItems] = useState([]);
   const [liquidGraph, setLiquidGraph] = useState([]);
   const [volumeGraph, setVolumeGraph] = useState([]);
   const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
+  const HeadingTextColorMode = useColorModeValue("black", "White");
 
   useEffect(() => {
     getClaimHealth();
@@ -55,9 +55,19 @@ function PoolTable() {
 
   return (
     <Box>
-      <Box>{console.log(items)}</Box>
-
       <Box mx={3} mb={2}>
+        <Text
+          mt="1%"
+          mx="10%"
+          fontSize="2xl"
+          fontWeight="semibold"
+          color={HeadingTextColorMode}
+        >
+          Claimswap Pools Analytics
+        </Text>
+        <Text mx="10%" fontSize="xl" fontWeight="normal" color="gray.400">
+          Overview
+        </Text>
         <Stack direction="row" justifyContent="center" my={10}>
           <Box
             px={5}
@@ -98,5 +108,3 @@ function PoolTable() {
 }
 
 export default PoolTable;
-
-//"https://api.covalenthq.com/v1/xy=k/supported_dexes/?quote-currency=USD&format=JSON&key=ckey_4e73d56514984838ab3206fbaf4"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 
 import { LiquidityChart, VolumeChart } from "..";
 import ClaimOverview from "./ClaimOverview/index";
@@ -10,6 +10,7 @@ function ClaimswapAnalytics() {
   const [liquidGraph, setLiquidGraph] = useState([]);
   const [volumeGraph, setVolumeGraph] = useState([]);
   const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
+  const HeadingTextColorMode = useColorModeValue("black", "White");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -55,6 +56,18 @@ function ClaimswapAnalytics() {
   return (
     <Box minH="100vh">
       <Box mx={3} mb={2}>
+        <Text
+          mt="1%"
+          mx="10%"
+          fontSize="2xl"
+          fontWeight="semibold"
+          color={HeadingTextColorMode}
+        >
+          Claimswap Analytics
+        </Text>
+        <Text mx="10%" fontSize="xl" fontWeight="normal" color="gray.400">
+          Overview
+        </Text>
         <ClaimOverview data={items} />
         <Box
           mx="auto"

@@ -1,6 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { background, Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Dashboard, Navbar } from "../components";
 
 export default function Home() {

@@ -20,7 +20,6 @@ import { GiTicket } from "react-icons/gi";
 
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-//import WalletButton from "./WalletButton";
 import ButtonConnect from "../ButtonConnect/index";
 
 export const ColorModeSwitcher = () => {
@@ -72,17 +71,14 @@ export default function Navbar() {
               KLAYTN
             </Text>
             <Text
-              fontSize="2xl"
+              fontSize="xl"
               fontWeight="extrabold"
               fontFamily="monospace"
               letterSpacing={2}
               fontStyle="normal"
-              //bgGradient="linear(to-l, #FC770A, #850000)"
-              //bgClip="text"
             >
               DEX DASHBOARD
             </Text>
-            {/* // #BB0149 // #FC770A // #850000 */}
             <HStack
               as={"nav"}
               spacing={4}

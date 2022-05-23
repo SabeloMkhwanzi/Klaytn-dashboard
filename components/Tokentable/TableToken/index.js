@@ -101,13 +101,13 @@ const TableToken = ({ data, rowsPerPage }) => {
                 {el.contract_ticker_symbol}
               </Td>
               <Td P="12px" fontSize="sm" fontWeight="bold" color={TextColor}>
-                {formatCash(el.quote_rate)}
+                ${formatCash(el.quote_rate)}
               </Td>
               <Td P="12px" fontSize="sm" fontWeight="bold" color={TextColor}>
                 {el.swap_count_24h}
               </Td>
               <Td P="12px" fontSize="sm" fontWeight="bold" color={TextColor}>
-                {formatCash(el.total_liquidity_quote)}
+                ${formatCash(el.total_liquidity_quote)}
               </Td>
             </Tr>
           ))}
