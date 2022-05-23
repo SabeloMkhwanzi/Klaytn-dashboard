@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-
 import { TableToken } from "..";
+import TokenOverview from "./TokenOverview";
 
 function TokenTable() {
   const [items, setItems] = useState([]);
-  const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
+  const [poolOverviews, setPoolOverviews] = useState([]);
 
   console.log(items);
+  console.log(poolOverviews);
 
   useEffect(() => {
     getPools();
+    getApi();
     items;
+    poolOverviews;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -32,11 +35,19 @@ function TokenTable() {
     setItems(data?.data?.items);
   };
 
+  const getApi = async (e) => {
+    const response = await fetch(
+      "https://api.covalenthq.com/v1/8217/xy=k/claimswap/ecosystem/?&key=ckey_4e73d56514984838ab3206fbaf4"
+    );
+    const data = await response.json();
+    setPoolOverviews(data?.data?.items);
+  };
   return (
     <Box>
       <Box mb={2} pt={10}></Box>
 
       <Box minWidth="1000" maxW="600" justifyItems="center" mx="auto">
+        <TokenOverview data={poolOverviews} />
         <TableToken data={items} rowsPerPage={9} />
       </Box>
     </Box>

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
 
 function PoolOverview({ data }) {
-  const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
+  const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
   const TextColor = useColorModeValue("#FC770A", "#FC770A");
   const TextColorMode = useColorModeValue("gray.500", "gray.400");
 
@@ -26,182 +26,166 @@ function PoolOverview({ data }) {
   return (
     <>
       {data.map((item) => (
-        <Box
-          bg={BoxBgColor}
-          borderRadius="md"
-          minH="350"
-          maxW="1200"
-          minW=""
-          boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-          bgColor="rgba(255, 0, 0, 0.1)"
-          mx="auto"
-          key={item.id}
-        >
-          <SimpleGrid columns={[1, null, 3]} spacing={2} mt={7}>
-            <Box
-              w="md"
-              maxW="xs"
-              justifyContent="center"
-              my={10}
-              px={5}
-              ps={5}
-              py={1}
-            >
-              <Box>
-                <Text
-                  textAlign="center"
-                  color={TextColorMode}
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                >
-                  Dex Name
-                </Text>
-                <Text
-                  fontSize="lg"
-                  mt={2}
-                  textAlign="center"
-                  color={TextColor}
-                  fontWeight="bold"
-                >
-                  {item.dex_name}
-                </Text>
+        <>
+          <Box
+            bg={BoxBgColor}
+            borderRadius="md"
+            minH="90"
+            maxW="1200"
+            minW=""
+            boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
+            mx="auto"
+            key={item.id}
+          >
+            <SimpleGrid columns={[1, null, 3]} spacing={2} mt={7}>
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    color={TextColorMode}
+                    fontSize="md"
+                    fontWeight="semibold"
+                    mt={5}
+                  >
+                    Dex Name
+                  </Text>
+                  <Text
+                    fontSize="lg"
+                    mt={2}
+                    textAlign="center"
+                    color={TextColor}
+                    fontWeight="bold"
+                  >
+                    {item.dex_name}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              my={10}
-              w="md"
-              maxW="xs"
-              justifyContent="center"
-              px={5}
-              ps={5}
-              py={1}
-            >
-              <Box>
-                <Text
-                  textAlign="center"
-                  color={TextColorMode}
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                >
-                  Quote Rate
-                </Text>
-                <Text
-                  textAlign="center"
-                  fontWeight="bold"
-                  fontSize="lg"
-                  mt={2}
-                  color={TextColor}
-                >
-                  ${item.quote_rate}
-                </Text>
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    color={TextColorMode}
+                    fontSize="md"
+                    fontWeight="semibold"
+                    mt={5}
+                  >
+                    Quote Rate
+                  </Text>
+                  <Text
+                    textAlign="center"
+                    fontWeight="bold"
+                    fontSize="lg"
+                    mt={2}
+                    color={TextColor}
+                  >
+                    ${item.quote_rate}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              my={10}
-              w="md"
-              maxW="xs"
-              justifyContent="center"
-              px={5}
-              ps={5}
-              py={1}
-            >
-              <Box>
-                <Text
-                  textAlign="center"
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                  color={TextColorMode}
-                >
-                  Total Liquidity Quote
-                </Text>
-                <Text
-                  textAlign="center"
-                  fontWeight="bold"
-                  fontSize="lg"
-                  mt={2}
-                  color={TextColor}
-                >
-                  ${numberWithCommas(item.total_liquidity_quote)}
-                </Text>
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    fontSize="md"
+                    fontWeight="semibold"
+                    mt={5}
+                    color={TextColorMode}
+                  >
+                    Total Liquidity Quote
+                  </Text>
+                  <Text
+                    textAlign="center"
+                    fontWeight="bold"
+                    fontSize="lg"
+                    mt={2}
+                    color={TextColor}
+                  >
+                    ${numberWithCommas(item.total_liquidity_quote)}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-          </SimpleGrid>
-          <SimpleGrid columns={[1, null, 3]} spacing={7} mt={7}>
-            <Box w="md" maxW="xs" justifyContent="center" px={5} ps={5} py={1}>
-              <Box>
-                <Text
-                  textAlign="center"
-                  color={TextColorMode}
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                >
-                  Quote Fees (24h)
-                </Text>
-                <Text
-                  fontSize="lg"
-                  mt={2}
-                  textAlign="center"
-                  color={TextColor}
-                  fontWeight="bold"
-                >
-                  $
-                  {item.fee_24h_quote
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                </Text>
-              </Box>
-            </Box>
-            <Box w="md" maxW="xs" justifyContent="center" px={5} ps={5} py={1}>
-              <Box>
-                <Text
-                  textAlign="center"
-                  color={TextColorMode}
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                >
-                  Total Count Swaps (24h)
-                </Text>
-                <Text
-                  textAlign="center"
-                  fontWeight="bold"
-                  fontSize="lg"
-                  mt={2}
-                  color={TextColor}
-                >
-                  {item.swap_count_24h}
-                </Text>
-              </Box>
-            </Box>
+            </SimpleGrid>
+          </Box>
 
-            <Box w="md" maxW="xs" justifyContent="center" px={5} ps={5} py={1}>
-              <Box>
-                <Text
-                  textAlign="center"
-                  fontSize="md"
-                  fontWeight="semibold"
-                  mt={5}
-                  color={TextColorMode}
-                >
-                  Annualized Fee
-                </Text>
-                <Text
-                  textAlign="center"
-                  fontWeight="bold"
-                  fontSize="lg"
-                  mt={2}
-                  color={TextColor}
-                >
-                  {item.annualized_fee}
-                </Text>
+          <Box
+            borderRadius="md"
+            minH="100"
+            maxW="1200"
+            minW=""
+            mx="auto"
+            key={item.id}
+          >
+            <SimpleGrid columns={[1, null, 3]} spacing={7} mt={7}>
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    color={TextColorMode}
+                    fontSize="md"
+                    fontWeight="semibold"
+                  >
+                    Quote Fees (24h)
+                  </Text>
+                  <Text
+                    fontSize="lg"
+                    mt={2}
+                    textAlign="center"
+                    color={TextColor}
+                    fontWeight="bold"
+                  >
+                    $
+                    {item.fee_24h_quote
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-          </SimpleGrid>
-        </Box>
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    color={TextColorMode}
+                    fontSize="md"
+                    fontWeight="semibold"
+                  >
+                    Total Count Swaps (24h)
+                  </Text>
+                  <Text
+                    textAlign="center"
+                    fontWeight="bold"
+                    fontSize="lg"
+                    mt={2}
+                    color={TextColor}
+                  >
+                    {item.swap_count_24h}
+                  </Text>
+                </Box>
+              </Box>
+
+              <Box w="md" maxW="xs" justifyContent="center">
+                <Box>
+                  <Text
+                    textAlign="center"
+                    fontSize="md"
+                    fontWeight="semibold"
+                    color={TextColorMode}
+                  >
+                    Annualized Fee
+                  </Text>
+                  <Text
+                    textAlign="center"
+                    fontWeight="bold"
+                    fontSize="lg"
+                    mt={2}
+                    color={TextColor}
+                  >
+                    {item.annualized_fee}
+                  </Text>
+                </Box>
+              </Box>
+            </SimpleGrid>
+          </Box>
+        </>
       ))}
     </>
   );

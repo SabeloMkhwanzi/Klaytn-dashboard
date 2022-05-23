@@ -11,7 +11,7 @@ function PoolTable() {
   const [items, setItems] = useState([]);
   const [liquidGraph, setLiquidGraph] = useState([]);
   const [volumeGraph, setVolumeGraph] = useState([]);
-  const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
+  const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
 
   useEffect(() => {
     getClaimHealth();
@@ -60,9 +60,6 @@ function PoolTable() {
       <Box mx={3} mb={2}>
         <Stack direction="row" justifyContent="center" my={10}>
           <Box
-            //mx="auto"
-            //my={5}
-            //mx={10}
             px={5}
             ps={5}
             py={5}
@@ -73,14 +70,10 @@ function PoolTable() {
             maxW="950"
             minW="600"
             boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-            bgColor="rgba(255, 0, 0, 0.1)"
           >
             <LiquidityPoolsChart data={liquidGraph} />
           </Box>
           <Box
-            //mx="auto"
-            //my={5}
-            //mx={10}
             px={5}
             ps={5}
             py={5}
@@ -91,14 +84,13 @@ function PoolTable() {
             maxW="950"
             minW="600"
             boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-            bgColor="rgba(255, 0, 0, 0.1)"
           >
             <VolumePoolChart data={volumeGraph} />
           </Box>
         </Stack>
         <PoolOverview data={items} />
       </Box>
-      <Box mt={20}>
+      <Box mt={3}>
         <Table data={items} />
       </Box>
     </Box>

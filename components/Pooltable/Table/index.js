@@ -7,12 +7,12 @@ import {
   SimpleGrid,
   Text,
   Avatar,
-  VStack,
 } from "@chakra-ui/react";
-import millify from "millify";
 
 export default function Transaction({ data }) {
-  const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
+  const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
+  const TrColorMode = useColorModeValue("#EEEEEE", "#5F939A");
+  const TextColor = useColorModeValue("black", "white");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -30,12 +30,9 @@ export default function Transaction({ data }) {
         minH="350"
         maxW="1200"
         boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-        bgColor="rgba(255, 0, 0, 0.1)"
         mx="auto"
         alignItems="center"
         justifyContent="center"
-
-        // bg="#243036"
       >
         <Stack
           direction={{ base: "column" }}
@@ -53,7 +50,7 @@ export default function Transaction({ data }) {
               w={{ base: 120, md: "full" }}
               textTransform="uppercase"
               bg={BoxBgColor}
-              color={"gray.100"}
+              color={TextColor}
               py={{ base: 1, md: 4 }}
               px={{ base: 2, md: 10 }}
               fontSize="md"
@@ -78,9 +75,9 @@ export default function Transaction({ data }) {
                   fontSize="lg"
                   textAlign="center"
                   key={item.logo_url}
-                  bg={BoxBgColor}
+                  bg={TrColorMode}
                 >
-                  <Stack direction="row" bg={BoxBgColor}>
+                  <Stack direction="row" bg={TrColorMode}>
                     <Avatar
                       size="sm"
                       name={item.token_0.contract_name}
@@ -102,7 +99,7 @@ export default function Transaction({ data }) {
                     overflow="hidden"
                     whiteSpace="nowrap"
                   >
-                    <Text color="red.500" fontSize="lg" isTruncated>
+                    <Text fontSize="lg" isTruncated>
                       {formatCash(item.token_0.reserve)}
                     </Text>
                   </chakra.span>
@@ -110,7 +107,6 @@ export default function Transaction({ data }) {
                     textOverflow="ellipsis"
                     overflow="hidden"
                     whiteSpace="nowrap"
-                    color="green.500"
                   >
                     {formatCash(item.token_0.volume_in_7d)}
                   </chakra.span>
@@ -118,7 +114,6 @@ export default function Transaction({ data }) {
                     textOverflow="ellipsis"
                     overflow="hidden"
                     whiteSpace="nowrap"
-                    color="green.500"
                   >
                     {formatCash(item.token_0.volume_out_7d)}
                   </chakra.span>
@@ -133,12 +128,12 @@ export default function Transaction({ data }) {
                   fontSize="lg"
                   textAlign="center"
                   key={item.token_1.logo_url}
-                  bg={BoxBgColor}
+                  bg={TrColorMode}
                 >
-                  <Stack direction="row" borderRadius={20} bg={BoxBgColor}>
+                  <Stack direction="row" borderRadius={20} bg={TrColorMode}>
                     <Avatar
                       size="sm"
-                      name={item.token_1.contract_name}
+                      name={item.token_1.logo_url}
                       src={item.token_1.logo_url}
                     />
                     <Text isTruncated fontSize="lg">
@@ -157,7 +152,7 @@ export default function Transaction({ data }) {
                     overflow="hidden"
                     whiteSpace="nowrap"
                   >
-                    <Text color="red.500" fontSize="lg" isTruncated>
+                    <Text fontSize="lg" isTruncated>
                       {formatCash(item.token_1.reserve)}
                     </Text>
                   </chakra.span>
@@ -165,7 +160,6 @@ export default function Transaction({ data }) {
                     textOverflow="ellipsis"
                     overflow="hidden"
                     whiteSpace="nowrap"
-                    color="green.500"
                   >
                     {formatCash(item.token_1.volume_in_7d)}
                   </chakra.span>
@@ -173,7 +167,6 @@ export default function Transaction({ data }) {
                     textOverflow="ellipsis"
                     overflow="hidden"
                     whiteSpace="nowrap"
-                    color="green.500"
                   >
                     {formatCash(item.token_1.volume_out_7d)}
                   </chakra.span>

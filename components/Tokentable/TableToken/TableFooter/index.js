@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, useColorModeValue } from "@chakra-ui/react";
 
 const TableFooter = ({ range, setPage, page, slice }) => {
+  const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
+  const TextColor = useColorModeValue("#FC770A", "#FC770A");
+
   useEffect(() => {
     if (slice.length < 1 && page !== 1) {
       setPage(page - 1);
@@ -10,7 +13,7 @@ const TableFooter = ({ range, setPage, page, slice }) => {
   }, [slice, page, setPage]);
   return (
     <Box
-      bgColor="white"
+      bgColor={BoxBgColor}
       padding="8px 0px"
       width="100%"
       font-weight="500"
@@ -24,23 +27,20 @@ const TableFooter = ({ range, setPage, page, slice }) => {
     >
       {range.map((el, index) => (
         <Button
+          color={TextColor}
           p="7px 14px"
-          border="2px"
+          border="1px"
           cursor="pointer"
           margin-right="4px"
           margin-left="4px"
           key={index}
           onClick={() => setPage(el)}
           isAttached
-          _hover={{ bg: "orange" }}
+          _hover={{ bg: "gray.500" }}
           _active={{
-            bg: "blue",
+            bg: "#FC770A",
             transform: "scale(0.98)",
-            borderColor: "red",
-          }}
-          _focus={{
-            boxShadow:
-              "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+            borderColor: "#FC770A",
           }}
         >
           {el}

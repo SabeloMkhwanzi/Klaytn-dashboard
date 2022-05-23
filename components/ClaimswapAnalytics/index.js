@@ -9,7 +9,7 @@ function ClaimswapAnalytics() {
   const [items, setItems] = useState([]);
   const [liquidGraph, setLiquidGraph] = useState([]);
   const [volumeGraph, setVolumeGraph] = useState([]);
-  const BoxBgColor = useColorModeValue("#E6E6E6", "#21325E");
+  const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
 
   const formatCash = (n) => {
     if (n < 1e3) return n;
@@ -53,11 +53,9 @@ function ClaimswapAnalytics() {
   };
 
   return (
-    <Box>
-      {/* {items.map((item) => (
-        <Box key={item.chain_id}>{console.log(item)}</Box>
-      ))} */}
+    <Box minH="100vh">
       <Box mx={3} mb={2}>
+        <ClaimOverview data={items} />
         <Box
           mx="auto"
           my={5}
@@ -68,9 +66,8 @@ function ClaimswapAnalytics() {
           rounded="md "
           borderRadius="lg"
           h="450px"
-          maxW="950"
+          maxW="1000"
           boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-          bgColor="rgba(255, 0, 0, 0.1)"
         >
           <LiquidityChart data={liquidGraph} />
         </Box>
@@ -84,13 +81,11 @@ function ClaimswapAnalytics() {
           rounded="md "
           borderRadius="lg"
           h="450px"
-          maxW="950"
+          maxW="1000"
           boxShadow="0px 5px 25px 0px rgba(0, 0, 0, .25);"
-          bgColor="rgba(255, 0, 0, 0.1)"
         >
           <VolumeChart data={volumeGraph} />
         </Box>
-        <ClaimOverview data={items} />
       </Box>
     </Box>
   );

@@ -2,6 +2,13 @@ import React from "react";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 
 function Markets() {
+  const getKlaytnMarket = async (e) => {
+    const response = await axios.get(
+      "https://api.coincap.io/v2/assets/klaytn/markets"
+    );
+    setMarket(response.data.data);
+  };
+
   return (
     <Box
       bg={BoxBgColor}
