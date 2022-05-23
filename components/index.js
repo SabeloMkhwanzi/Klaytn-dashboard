@@ -1,6 +1,6 @@
 export { default as Dashboard } from "./Dashboard";
-export { default as PoolTable } from "./PoolTable/index";
-export { default as TokenTable } from "./TokenTable/index";
+export { default as PoolTable } from "./PoolTable";
+export { default as TokenTable } from "./TokenTable";
 export { default as ButtonConnect } from "./ButtonConnect";
 export { default as Navbar } from "./Navbar/index.js";
 export { default as AssetsBox } from "./AssetsBox/index";
@@ -13,6 +13,6 @@ export { default as LiquidityChart } from "./ClaimswapAnalytics/LiquidityChart/i
 export { default as VolumeChart } from "./ClaimswapAnalytics/VolumeChart/index";
 export { default as Table } from "./PoolTable/Table/index";
 export { default as LiquidityPoolsChart } from "./PoolTable/PoolsCharts/LiquidityPoolsChart/index";
-export { default as VolumPoolChart } from "./PoolTable/PoolsCharts/VolumePoolChart/index";
+export { default as VolumePoolChart } from "./PoolTable/PoolsCharts/VolumePoolChart/index";
 export { default as TokenOverview } from "./TokenTable/TokenOverview/index";
 export { default as TableToken } from "./TokenTable/TableToken/index";

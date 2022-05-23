@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 import { Box, Stack, useColorModeValue, Text } from "@chakra-ui/react";
 import PoolOverview from "./PoolOverview";
 import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart";
@@ -29,7 +29,7 @@ function PoolTable() {
     if (n >= 1e12) return +(n / 1e12).toFixed(1);
   };
 
-  const getClaimHealth = async (e) => {
+  const PoolTable = async (e) => {
     const response = await fetch(
       "https://api.covalenthq.com/v1/8217/xy=k/claimswap/pools/address/0x9ddcBC22bEB97899B5ceDCAbbA50A98314c3bAC1/?&key=ckey_4e73d56514984838ab3206fbaf4"
     );
