@@ -9,7 +9,7 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
-export default function Transaction({ data }) {
+export default function Table({ data }) {
   const BoxBgColor = useColorModeValue("#FFE5E5", "#142F43");
   const TrColorMode = useColorModeValue("#EEEEEE", "#5F939A");
   const TextColor = useColorModeValue("black", "white");

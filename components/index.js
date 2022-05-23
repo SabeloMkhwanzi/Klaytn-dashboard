@@ -1,6 +1,6 @@
 export { default as Dashboard } from "./Dashboard";
-export { default as PoolTable } from "./PoolTable";
-export { default as TokenTable } from "./TokenTable";
+export { default as PoolTable } from "./PoolTable/index";
+export { default as TokenTable } from "./TokenTable/index";
 export { default as ButtonConnect } from "./ButtonConnect";
 export { default as Navbar } from "./Navbar/index.js";
 export { default as AssetsBox } from "./AssetsBox/index";
