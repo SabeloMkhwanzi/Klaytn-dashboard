@@ -3,6 +3,8 @@ import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 import TableToken from "./TableToken/index";
 import TokenOverview from "./TokenOverview/index";
 
+const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
+
 function Tokens() {
   const [items, setItems] = useState([]);
   const [poolOverviews, setPoolOverviews] = useState([]);
@@ -26,7 +28,7 @@ function Tokens() {
 
   const getPools = async (e) => {
     const response = await fetch(
-      "https://api.covalenthq.com/v1/8217/xy=k/claimswap/tokens/?&key=ckey_4e73d56514984838ab3206fbaf4"
+      `https://api.covalenthq.com/v1/8217/xy=k/claimswap/tokens/?&key=${APIKey}`
     );
     const data = await response.json();
     setItems(data?.data?.items);
@@ -34,7 +36,7 @@ function Tokens() {
 
   const getApi = async (e) => {
     const response = await fetch(
-      "https://api.covalenthq.com/v1/8217/xy=k/claimswap/ecosystem/?&key=ckey_4e73d56514984838ab3206fbaf4"
+      `https://api.covalenthq.com/v1/8217/xy=k/claimswap/ecosystem/?&key=${APIKey}`
     );
     const data = await response.json();
     setPoolOverviews(data?.data?.items);

@@ -6,6 +6,8 @@ import LiquidityPoolsChart from "./PoolsCharts/LiquidityPoolsChart/index";
 import VolumePoolChart from "./PoolsCharts/VolumePoolChart/index";
 import Table from "./Table/index";
 
+const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
+
 function Pools() {
   const [items, setItems] = useState([]);
   const [liquidGraph, setLiquidGraph] = useState([]);
@@ -31,7 +33,7 @@ function Pools() {
 
   const PoolTable = async (e) => {
     const response = await fetch(
-      "https://api.covalenthq.com/v1/8217/xy=k/claimswap/pools/address/0x9ddcBC22bEB97899B5ceDCAbbA50A98314c3bAC1/?&key=ckey_4e73d56514984838ab3206fbaf4"
+      `https://api.covalenthq.com/v1/8217/xy=k/claimswap/pools/address/0x9ddcBC22bEB97899B5ceDCAbbA50A98314c3bAC1/?&key=${APIKey}`
     );
     const data = await response.json();
     setItems(data?.data?.items);

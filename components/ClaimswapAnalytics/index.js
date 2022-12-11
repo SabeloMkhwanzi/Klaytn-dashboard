@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 
 import LiquidityChart from "./LiquidityChart/index";
 import VolumeChart from "./VolumeChart/index";
 import ClaimOverview from "./ClaimOverview/index";
+
+
+const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
 
 function ClaimswapAnalytics() {
   const [items, setItems] = useState([]);
@@ -32,7 +35,7 @@ function ClaimswapAnalytics() {
   //handle Ecosystem data
   const getApi = async (e) => {
     const response = await fetch(
-      "https://api.covalenthq.com/v1/8217/xy=k/claimswap/ecosystem/?&key=ckey_4e73d56514984838ab3206fbaf4"
+      `https://api.covalenthq.com/v1/8217/xy=k/claimswap/ecosystem/?&key=${APIKey}`
     );
     const data = await response.json();
     setItems(data.data.items);
