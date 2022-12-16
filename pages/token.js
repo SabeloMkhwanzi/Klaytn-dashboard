@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import Tokens from "../components/tokens/tokens.js";
+
 import Navbar from "../components/Navbar/index";
 
 export default function Token() {
@@ -15,7 +15,6 @@ export default function Token() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
-        <Tokens />
       </Box>
     </>
   );
