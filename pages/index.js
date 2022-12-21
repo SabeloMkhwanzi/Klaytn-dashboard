@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import Dashboard from "../components/Dashboard/index";
+//import Dashboard from "../components/Dashboard/index";
 import Navbar from "../components/Navbar/index";
+import EmvosOverview from "../components/EmvosOverview";
 
 export default function Home() {
   const backgroundColor = useColorModeValue("white", "gray.900");
@@ -17,7 +18,7 @@ export default function Home() {
       </Head>
       <Box minHeight="100vh" bg={backgroundColor}>
         <Navbar />
-        <Dashboard />
+        <EmvosOverview />
       </Box>
     </>
   );
