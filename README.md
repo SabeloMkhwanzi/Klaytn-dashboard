@@ -37,17 +37,6 @@
 ##### 1. Home Page
 
 ![HomePage](https://github.com/SabeloMkhwanzi/Klaytn-dashboard/blob/main/public/klaytn%20Analytics.jpg)
-
-#### Live website: [Klaytn- DEFI DEX Dashboard](https://klaytn-dashboard.vercel.app/)
-
-#### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/Klaytn-dashboard)
-
-#### Demo video: [video](https://youtu.be/JNHbM-a-uNg)
-
-#### Project Start: Date: 14 - 23 May, 2022
-
-#### Wallet Address : 0xF975206a46b4eD9f5F008AF9813B19bf083d94eE
-
 #### Running the app
 
 ### Getting Started
